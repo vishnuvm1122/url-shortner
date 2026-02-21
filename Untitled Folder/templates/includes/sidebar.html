@@ -1,0 +1,63 @@
+{% load static %}
+
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white vh-100 sidebar"
+     style="width: 250px;">
+
+  <!-- Brand -->
+  <a href="{% url 'dashboard' %}"
+     class="d-flex align-items-center mb-3 text-white text-decoration-none">
+    <i class="bi bi-link-45deg fs-4 me-2"></i>
+    <span class="fs-5 fw-bold">URL Shortener</span>
+  </a>
+
+  <hr class="text-secondary">
+
+  {% if user.is_authenticated %}
+  <!-- User Info -->
+  <div class="mb-3 px-2">
+    <div class="fw-semibold d-flex align-items-center">
+      <i class="bi bi-person-circle me-2"></i>
+      {{ user.username }}
+    </div>
+    <small class="text-white ms-4">{{ user.email }}</small>
+  </div>
+  <hr class="text-secondary">
+  {% endif %}
+
+  <!-- Sidebar Menu -->
+  <ul class="nav nav-pills flex-column mb-auto">
+
+    <li class="nav-item">
+      <a href="{% url 'dashboard' %}"
+         class="nav-link d-flex align-items-center {% if request.path == '/dashboard/' %}active{% else %}text-white{% endif %}">
+        <i class="bi bi-speedometer2 me-2"></i>
+        Dashboard
+      </a>
+    </li>
+
+
+    <li class="nav-item">
+      <a href="{% url 'profile' %}"
+         class="nav-link d-flex align-items-center {% if request.path == '/profile/' %}active{% else %}text-white{% endif %}">
+        <i class="bi bi-person me-2"></i>
+        Profile
+      </a>
+    </li>
+
+    <li class="nav-item mt-3">
+      <a href="{% url 'logout' %}"
+         class="nav-link d-flex align-items-center text-danger">
+        <i class="bi bi-box-arrow-right me-2"></i>
+        Logout
+      </a>
+    </li>
+
+  </ul>
+
+  <hr class="text-secondary">
+
+  <div class="text-center small text-muted">
+    <i class="bi bi-code-slash me-1"></i> v1.0.0
+  </div>
+
+</div>

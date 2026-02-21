@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+
+    <title>{% block title %}URL Shortener{% endblock %}</title>
+
+    {% include 'includes/css.html' %}
+</head>
+
+<body class="bg-light">
+
+    <div class="d-flex vh-100">
+
+        <!-- Sidebar -->
+        <aside class="flex-shrink-0 bg-light border-end" style="width: 250px; overflow-auto;">
+            {% include 'includes/sidebar.html' %}
+        </aside>
+
+        <!-- Main Wrapper -->
+        <div class="d-flex flex-column flex-grow-1">
+
+            <!-- Navbar -->
+            {% include 'includes/navbar.html' %}
+
+            <!-- Page Content (Scrollable) -->
+            <main class="flex-grow-1 overflow-auto p-4">
+                {% block content %}
+                {% endblock %}
+            </main>
+
+            <!-- Footer (Sticky) -->
+            <footer class="mt-auto">
+                {% include 'includes/footer.html' %}
+            </footer>
+
+        </div>
+
+    </div>
+
+    {% include 'includes/script.html' %}
+
+</body>
+</html>
