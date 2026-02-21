@@ -1,56 +1,56 @@
-# URL Shortener - Django Project
+# 🚀 URL Shortener - Django Project
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
 ![Django](https://img.shields.io/badge/Django-3.x/4.x-green)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
+![License](https://img.shields.io/badge/License-MIT-orange)
 
 **GitHub Repo:** [https://github.com/vishnuvm1122/url-shortner](https://github.com/vishnuvm1122/url-shortner)
 
 ---
 
-## 📄 Description
+## 📄 Project Description
 A Django-based **URL Shortener** application that allows users to:
-- Create **short URLs** for long URLs
-- Track the number of clicks per URL
-- Manage URLs in a **user dashboard**
-- Redirect short URLs to the original URLs
-- View click details including **IP, browser, platform, and device**
+- ✨ Create **short URLs** for long URLs
+- 📊 Track the number of clicks per URL
+- 🖥 Manage URLs in a **user dashboard**
+- 🔗 Redirect short URLs to the original URLs
+- 🕵️ View click details including **IP, browser, platform, and device**
 
 ---
 
 ## 👤 User Authentication & Profile Features
-- **User Registration** with username, email, and password
-- **Login** and Logout functionality
-- **Profile Update** (username, email, first name, last name)
-- **Password Change** with old password verification
-- Form validation with helpful error messages
-- Bootstrap 5 styling for all forms
-- Flash messages for user feedback
+- 📝 **User Registration** with username, email, and password
+- 🔐 **Login** and Logout functionality
+- 🛠 **Profile Update** (username, email, first name, last name)
+- 🔑 **Password Change** with old password verification
+- 💻 Bootstrap 5 styled forms with validation
+- 📢 Flash messages for feedback
 
 ---
 
 ## 🔗 URL Shortening Features
-- Create **short URLs** with unique 6-character or 10-character UIDs
-- **Edit** or **delete** your own URLs
-- Auto-increment click count per URL
-- Redirect short URL to the original URL safely
-- **AJAX support** for dynamic URL creation, editing, and deletion
+- 🔹 Create **short URLs** with unique 6-character or 10-character UIDs
+- ✏️ **Edit** or **delete** your own URLs
+- 📈 Auto-increment click count per URL
+- 🔄 Redirect short URL to the original URL safely
+- ⚡ **AJAX support** for dynamic URL creation, editing, and deletion
 
 ---
 
 ## 📊 Click Tracking Features
-- Records **IP address, browser, platform, and device** for each click
-- Click details displayed per URL for logged-in users
-- Ability to **delete individual click records**
-- Admin panel support for viewing click history
+- 🌐 Records **IP address, browser, platform, and device** for each click
+- 📋 Click details displayed per URL for logged-in users
+- ❌ Ability to **delete individual click records**
+- 🛠 Admin panel support for viewing click history
 
 ---
 
 ## 🛠 Admin Panel Features
 - Full management of `Url` and `UrlClick` models
-- **Search** and **filter** URLs and clicks
-- Click counts and URL preview directly in admin
-- Short URL links clickable in admin for quick access
+- 🔎 **Search** and **filter** URLs and clicks
+- 📊 Click counts and URL preview directly in admin
+- 🔗 Clickable short URL links in admin
 
 ---
 
@@ -77,9 +77,12 @@ cd url-shortner
 
 # Create virtual environment
 python3 -m venv venv
-# Activate environment
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
+
+# Activate environment (Linux/macOS)
+source venv/bin/activate
+
+# Activate environment (Windows)
+venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
