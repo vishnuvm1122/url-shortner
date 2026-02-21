@@ -1,61 +1,94 @@
-URL Shortener - Django Project
-==============================
+# URL Shortener - Django Project
 
-Project Name: URL Shortner
-GitHub Repo: https://github.com/vishnuvm1122/url-shortner
+![Python](https://img.shields.io/badge/Python-3.8+-blue)
+![Django](https://img.shields.io/badge/Django-3.x/4.x-green)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
 
-Description:
--------------
-This is a Django-based URL Shortener application. It allows users to:
-- Create short URLs for long URLs
+**GitHub Repo:** [https://github.com/vishnuvm1122/url-shortner](https://github.com/vishnuvm1122/url-shortner)
+
+---
+
+## 📄 Description
+A Django-based **URL Shortener** application that allows users to:
+- Create **short URLs** for long URLs
 - Track the number of clicks per URL
-- Manage URLs in a simple dashboard
-- Redirect short URLs to the original long URLs
+- Manage URLs in a **user dashboard**
+- Redirect short URLs to the original URLs
+- View click details including **IP, browser, platform, and device**
 
-Features:
-----------
-1. User authentication and dashboard
-2. Create and manage shortened URLs
-3. Click count tracking for each URL
-4. Simple and responsive UI using Bootstrap
+---
 
-Technologies Used:
-------------------
-- Python 3.8+
-- Django 3.x/4.x
-- SQLite/PostgreSQL (optional)
-- Bootstrap 5 for front-end styling
-- HTML, CSS, JS
+## 👤 User Authentication & Profile Features
+- **User Registration** with username, email, and password
+- **Login** and Logout functionality
+- **Profile Update** (username, email, first name, last name)
+- **Password Change** with old password verification
+- Form validation with helpful error messages
+- Bootstrap 5 styling for all forms
+- Flash messages for user feedback
 
-Setup Instructions:
--------------------
-1. Clone the repository:
-   git clone https://github.com/vishnuvm1122/url-shortner.git
+---
 
-2. Navigate into the project folder:
-   cd url-shortner
+## 🔗 URL Shortening Features
+- Create **short URLs** with unique 6-character or 10-character UIDs
+- **Edit** or **delete** your own URLs
+- Auto-increment click count per URL
+- Redirect short URL to the original URL safely
+- **AJAX support** for dynamic URL creation, editing, and deletion
 
-3. Create a virtual environment:
-   python3 -m venv venv
-   source venv/bin/activate  (Linux/macOS)
-   venv\Scripts\activate     (Windows)
+---
 
-4. Install dependencies:
-   pip install -r requirements.txt
+## 📊 Click Tracking Features
+- Records **IP address, browser, platform, and device** for each click
+- Click details displayed per URL for logged-in users
+- Ability to **delete individual click records**
+- Admin panel support for viewing click history
 
-5. Apply migrations:
-   python manage.py migrate
+---
 
-6. Create a superuser (admin):
-   python manage.py createsuperuser
+## 🛠 Admin Panel Features
+- Full management of `Url` and `UrlClick` models
+- **Search** and **filter** URLs and clicks
+- Click counts and URL preview directly in admin
+- Short URL links clickable in admin for quick access
 
-7. Run the development server:
-   python manage.py runserver
+---
 
-8. Open your browser at:
-   http://127.0.0.1:8000/
+## ⚡ Technologies Used
+| Technology | Purpose |
+|------------|---------|
+| Python 3.8+ | Backend logic |
+| Django 3.x/4.x | Web framework |
+| SQLite/PostgreSQL | Database |
+| Bootstrap 5 | Front-end styling |
+| HTML/CSS/JS | Web UI |
+| user-agents | Detect browser/device info |
 
-Notes:
-------
-- Make sure to set your GitHub personal access token if pushing via HTTPS.
-- For production, configure proper database and environment settings.
+---
+
+## 🚀 Setup Instructions
+
+```bash
+# Clone the repository
+git clone https://github.com/vishnuvm1122/url-shortner.git
+
+# Navigate into project folder
+cd url-shortner
+
+# Create virtual environment
+python3 -m venv venv
+# Activate environment
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Apply migrations
+python manage.py migrate
+
+# Create superuser
+python manage.py createsuperuser
+
+# Run development server
+python manage.py runserver
