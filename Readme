@@ -1,103 +1,314 @@
 # 🚀 URL Shortener — Django Project
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
-[![Django](https://img.shields.io/badge/Django-3.x%2F4.x-green)](https://www.djangoproject.com/)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)](https://getbootstrap.com/)
-[![License](https://img.shields.io/badge/License-MIT-orange)](LICENSE)
+<div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Vishnu-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vishnuvm1997/)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Django](https://img.shields.io/badge/Django-3.x%2F4.x-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+[![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+
+[![License](https://img.shields.io/badge/License-MIT-90EE90?style=for-the-badge)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Active-00FF00?style=for-the-badge)](https://github.com/vishnuvm1122/url-shortner)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Vishnu_VM-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vishnuvm1997/)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vishnuvm1122)
+
+</div>
 
 ---
 
-## 📺 Demo
+## 🎬 Demo & Preview
+
+> **Watch the magic happen!** Convert any long URL into a compact, shareable short link in seconds.
 
 ![screen-demo](./files/screen-demo.gif)
 
----
-
-## 📋 Table of Contents
-
-- [Project Description](#-project-description)
-- [Features](#-features)
-- [Technologies Used](#-technologies-used)
-- [Setup Instructions](#-setup-instructions)
-- [Usage](#-usage)
-- [Admin Panel](#-admin-panel)
-- [License](#-license)
+*GIF showing the full URL shortening workflow with dashboard analytics*
 
 ---
 
-## 📝 Project Description
+## 📑 Table of Contents
 
-A Django-based **URL Shortener** application that allows users to:
+<details open>
+<summary><b>Click to expand/collapse</b></summary>
 
-- ✨ Create **short URLs** for long URLs
-- 📊 Track the number of clicks per URL
-- 🖥️ Manage URLs in a **user dashboard**
-- 🔗 Redirect short URLs to the original URLs
-- 🕵️ View click details including **IP, browser, platform, and device**
+- [✨ Overview](#-overview)
+- [🎯 Key Features](#-key-features)
+- [🛠️ Technologies Used](#️-technologies-used)
+- [📦 Installation Guide](#-installation-guide)
+- [🚀 Quick Start](#-quick-start)
+- [💡 Usage Examples](#-usage-examples)
+- [🎛️ Admin Panel](#️-admin-panel)
+- [🔒 Security Features](#-security-features)
+- [🐛 Troubleshooting](#-troubleshooting)
+- [📄 License & Credits](#-license--credits)
+
+</details>
 
 ---
 
-## ✨ Features
+## ✨ Overview
 
-### 🔐 User Authentication & Profile
+> A **production-ready** Django-based URL Shortener that transforms long, complex URLs into clean, shareable short links.
 
-- 📝 **User Registration** with username, email, and password validation
-- 🔐 **Login & Logout** functionality with session management
-- 🛠️ **Profile Update** (username, email, first name, last name)
-- 🔑 **Password Change** with old password verification
-- 💻 Bootstrap 5 styled forms with client-side validation
-- 📢 Flash messages for user feedback
+### What Does It Do? 🤔
 
-### 🔗 URL Shortening
+```
+📥 Long URL
+  ↓
+🔄 URL Shortener Magic
+  ↓
+✨ Short, Shareable Link
+  ↓
+📊 Click Tracking & Analytics
+  ↓
+🎯 Redirect to Original URL
+```
 
-- 🔹 Create **short URLs** with unique 6-character or 10-character UIDs
-- ✏️ **Edit** or **delete** your own URLs anytime
-- 📈 Auto-increment click count per URL
-- 🔄 Redirect short URL to the original URL safely
-- ⚡ **AJAX support** for dynamic URL creation, editing, and deletion
+### Perfect For:
+- 📱 **Social Media:** Share links that fit character limits
+- 🔗 **Marketing:** Track campaign performance
+- 📊 **Analytics:** Monitor link clicks and visitor details
+- 🎯 **QR Codes:** Generate clean URLs for QR code generation
 
-### 📊 Click Tracking
+---
 
-- 🌐 Records **IP address, browser, platform, and device** for each click
-- 📋 Click details displayed per URL for logged-in users
-- ❌ Ability to **delete individual click records**
-- 🛠️ Admin panel support for viewing detailed click history
+## 🎯 Key Features
 
-### 🎛️ Admin Panel
+### 🔐 User Authentication & Account Management
+<table>
+<tr>
+<td>
 
-- ✅ Full management of `Url` and `UrlClick` models
-- 🔎 **Search** and **filter** URLs and clicks
-- 📊 Click counts and URL preview directly in admin
-- 🔗 Clickable short URL links for quick testing
+✅ **User Registration**
+- Email verification
+- Password strength validation
+- Username uniqueness checks
+
+</td>
+<td>
+
+✅ **Secure Login/Logout**
+- Session-based authentication
+- Password hashing with Django
+- CSRF protection
+
+</td>
+</tr>
+<tr>
+<td>
+
+✅ **Profile Management**
+- Update personal information
+- Change email address
+- Modify password securely
+
+</td>
+<td>
+
+✅ **Account Recovery**
+- Password reset functionality
+- Email verification
+- Security best practices
+
+</td>
+</tr>
+</table>
+
+### 🔗 URL Shortening & Management
+<table>
+<tr>
+<td>
+
+🔹 **Create Short URLs**
+- Custom or auto-generated codes
+- 6-10 character unique identifiers
+- One-click URL generation
+
+</td>
+<td>
+
+✏️ **Edit & Delete**
+- Modify original URLs anytime
+- Bulk operations supported
+- Version history tracking
+
+</td>
+</tr>
+<tr>
+<td>
+
+🌍 **Redirect & Routing**
+- Smart redirect logic
+- Active/inactive toggle
+- Link expiration options
+
+</td>
+<td>
+
+⚡ **AJAX Operations**
+- Lightning-fast page updates
+- No full page refreshes
+- Smooth user experience
+
+</td>
+</tr>
+</table>
+
+### 📊 Click Tracking & Analytics
+<table>
+<tr>
+<td>
+
+🌐 **IP Address Tracking**
+- Geolocation capabilities
+- Duplicate click detection
+- Traffic source analysis
+
+</td>
+<td>
+
+🖥️ **Device Detection**
+- Browser identification
+- OS/Platform detection
+- Device type classification
+- Mobile vs Desktop split
+
+</td>
+</tr>
+<tr>
+<td>
+
+📈 **Click History**
+- Real-time click counter
+- Historical click records
+- Click timeline visualization
+
+</td>
+<td>
+
+📋 **Analytics Dashboard**
+- Click statistics per URL
+- Performance graphs
+- Export click data
+
+</td>
+</tr>
+</table>
+
+### 🎛️ Admin Control Panel
+<table>
+<tr>
+<td>
+
+👨‍💼 **URL Management**
+- View all URLs in system
+- Search & filter options
+- Bulk actions support
+- Click count visibility
+
+</td>
+<td>
+
+📊 **Click Management**
+- Browse all click records
+- Filter by date/IP/browser
+- Delete spam clicks
+- Export analytics
+
+</td>
+</tr>
+<tr>
+<td>
+
+👥 **User Management**
+- View registered users
+- Disable user accounts
+- Reset user passwords
+- Monitor user activity
+
+</td>
+<td>
+
+🔍 **Advanced Filtering**
+- Search by URL/user/date
+- Multi-filter combinations
+- Sort capabilities
+- Bulk operations
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## 🛠️ Technologies Used
 
-| Technology | Purpose |
-|------------|---------|
-| **Python 3.8+** | Backend logic |
-| **Django 3.x/4.x** | Web framework |
-| **SQLite / PostgreSQL** | Database |
-| **Bootstrap 5** | Front-end styling |
-| **HTML / CSS / JavaScript** | Web UI |
-| **user-agents** | Detect browser & device info |
+<table>
+<tr>
+<td align="center" width="25%">
+
+### 🐍 Backend
+**Python 3.8+**
+**Django 3.x/4.x**
+**Django ORM**
+
+</td>
+<td align="center" width="25%">
+
+### 💾 Database
+**SQLite** (Dev)
+**PostgreSQL** (Prod)
+**dj-database-url**
+
+</td>
+<td align="center" width="25%">
+
+### 🎨 Frontend
+**Bootstrap 5**
+**HTML5**
+**CSS3**
+**JavaScript**
+
+</td>
+<td align="center" width="25%">
+
+### 🚀 Deployment
+**WhiteNoise**
+**Gunicorn**
+**Heroku Ready**
+
+</td>
+</tr>
+</table>
+
+### Additional Libraries
+- 🔍 **user-agents:** Browser & device detection
+- 🎨 **django-jazzmin:** Beautiful admin UI
+- 🔐 **django-cors-headers:** CORS support
+- 📦 **requests:** HTTP library
+- 🌐 **psycopg2:** PostgreSQL adapter
 
 ---
 
-## 📦 Setup Instructions
+## 📦 Installation Guide
 
-### Prerequisites
+### Prerequisites ✅
 
-Before you begin, ensure you have the following installed:
-- ✅ Python 3.8 or higher
-- ✅ pip (Python package manager)
-- ✅ virtualenv (optional but recommended)
-- ✅ Git
+Before you start, ensure you have:
 
-### Step-by-Step Installation
+```
+✅ Python 3.8 or higher
+✅ pip (Python Package Manager)
+✅ Git (Version Control)
+✅ Virtual Environment (Recommended)
+✅ 50MB Free Disk Space
+```
+
+### Step-by-Step Installation 🎯
+
+<details open>
+<summary><b>📋 Click to expand installation steps</b></summary>
 
 #### 1️⃣ Clone the Repository
 
@@ -122,85 +333,271 @@ python -m venv venv
 # Linux/macOS
 source venv/bin/activate
 
-# Windows
+# Windows Command Prompt
 venv\Scripts\activate
+
+# Windows PowerShell
+venv\Scripts\Activate.ps1
 ```
 
-#### 4️⃣ Install Dependencies
+✅ You should see `(venv)` in your terminal
+
+#### 4️⃣ Upgrade pip
+
+```bash
+python -m pip install --upgrade pip
+```
+
+#### 5️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-#### 5️⃣ Apply Database Migrations
+#### 6️⃣ Run Migrations
 
 ```bash
 python manage.py migrate
 ```
 
-#### 6️⃣ Create Superuser (Admin Account)
+#### 7️⃣ Create Superuser Account
 
 ```bash
 python manage.py createsuperuser
 ```
 
-Follow the prompts to create an admin account:
-- Username: `admin` (or your choice)
-- Email: `admin@example.com` (or your email)
-- Password: (enter a strong password)
+Enter your credentials:
+- **Username:** Choose a username (e.g., `admin`)
+- **Email:** Your email address
+- **Password:** Strong password (8+ characters)
 
-#### 7️⃣ Run Development Server
+#### 8️⃣ Run Development Server
 
 ```bash
 python manage.py runserver
 ```
 
-🎉 **Server is running!** Open your browser and visit:
+🎉 **Server is running!**
+
+Open your browser:
 - 🏠 **Application:** http://127.0.0.1:8000/
-- 🎛️ **Admin Panel:** http://127.0.0.1:8000/admin/
+- 🎛️ **Admin:** http://127.0.0.1:8000/admin/
+
+</details>
 
 ---
 
-## 🚀 Usage
+## 🚀 Quick Start
 
-### Creating a Short URL
+### First Time Setup (5 minutes)
 
-1. Register a new account or login
-2. Navigate to the **Dashboard**
-3. Enter your long URL in the input field
-4. Click **"Shorten URL"**
-5. Your short URL will be generated with a unique code
-6. Share your short URL!
+```bash
+# 1. Clone & Setup
+git clone https://github.com/vishnuvm1122/url-shortner.git
+cd url-shortner
 
-### Viewing Click Analytics
+# 2. Virtual Environment
+python3 -m venv venv && source venv/bin/activate
 
-1. Go to **Dashboard**
-2. Select any shortened URL
-3. View detailed click information:
-   - 🌐 IP Address
-   - 🌐 Browser & Platform
-   - 📱 Device Information
-   - ⏰ Click Timestamp
+# 3. Install & Migrate
+pip install -r requirements.txt
+python manage.py migrate
 
-### Managing Your URLs
+# 4. Create Admin
+python manage.py createsuperuser
 
-- ✏️ **Edit:** Modify the original URL anytime
-- 🗑️ **Delete:** Remove URLs you no longer need
-- 📊 **Track:** Monitor clicks in real-time
+# 5. Run Server
+python manage.py runserver
+
+# ✅ Visit http://127.0.0.1:8000/
+```
 
 ---
 
-## 🎛️ Admin Panel
+## 💡 Usage Examples
 
-Access the admin panel at `/admin/` with your superuser credentials:
+### 📝 Creating Your First Short URL
+
+1. **Register** on the home page
+2. **Login** to your account
+3. **Go to Dashboard**
+4. **Enter Long URL:**
+   ```
+   https://example.com/products/category/subcategory/item?id=12345&ref=email
+   ```
+5. **Click "Shorten URL"**
+6. **Get:** `http://your-domain.com/aB12x9`
+7. **Share & Track!** 🎉
+
+### 📊 Viewing Analytics
+
+```
+Your Dashboard → Select URL → Click Analytics
+                    ↓
+          See all visitor details:
+          - IP Address: 192.168.1.1
+          - Browser: Chrome 121.0
+          - Platform: Windows 10
+          - Device: Desktop
+          - Click Time: 2024-09-01 14:30:45
+```
+
+### 🔗 Managing URLs
+
+| Action | Steps |
+|--------|-------|
+| **Edit URL** | Dashboard → Select URL → Click Edit → Update → Save |
+| **Delete URL** | Dashboard → Select URL → Click Delete → Confirm |
+| **Copy Link** | Dashboard → Hover URL → Click Copy Icon |
+| **View Stats** | Dashboard → Select URL → View Clicks |
+
+---
+
+## 🎛️ Admin Panel Guide
+
+### Access Admin Dashboard
+
+```
+URL: http://127.0.0.1:8000/admin/
+Username: (your superuser username)
+Password: (your superuser password)
+```
 
 ### Admin Features
 
-- 🔎 Search and filter URLs by user, date, or custom criteria
-- 📊 View click statistics per URL
-- 🔗 Directly access short URLs from the admin panel
-- 🗑️ Bulk delete URLs or click records
-- 👥 Manage user accounts and permissions
+#### 🔗 URL Management
+- View all shortened URLs
+- Search by UUID or original link
+- Filter by user/date/status
+- Edit active status
+- Delete URLs and associated clicks
+- Sort by click count
+
+#### 📊 Click Analytics
+- Browse complete click history
+- Filter by URL/IP/Browser/Platform
+- Sort by date
+- Delete individual click records
+- Export click data (future feature)
+- Identify trending links
+
+#### 👥 User Management
+- View registered users
+- Manage user permissions
+- Deactivate accounts
+- Reset passwords
+- Track user activity
+
+#### 🔍 Advanced Filtering
+```
+Example Filters:
+- Show URLs created in last 7 days
+- Filter clicks from Chrome browser
+- Show URLs with 100+ clicks
+- Display URLs by specific users
+```
+
+---
+
+## 🔒 Security Features
+
+### Built-in Protections ✅
+
+| Feature | Description |
+|---------|-------------|
+| 🔐 **CSRF Protection** | Django CSRF middleware on all forms |
+| 🔑 **Password Hashing** | PBKDF2 algorithm with salt |
+| 👤 **IDOR Prevention** | Users can only manage their own URLs |
+| 📝 **Input Validation** | URL format validation & sanitization |
+| 🚫 **SQL Injection Safe** | Django ORM protects against SQL injection |
+| 🔒 **Session Security** | Secure session management |
+
+### Production Recommendations 🛡️
+
+```python
+# Enable these in production:
+DEBUG = False
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = "DENY"
+SECURE_HSTS_SECONDS = 31536000
+```
+
+---
+
+## 🐛 Troubleshooting
+
+### Common Issues & Solutions
+
+<details>
+<summary><b>❓ Python command not found</b></summary>
+
+**Error:** `command not found: python`
+
+**Solution:** Use `python3` instead of `python`
+```bash
+python3 -m venv venv
+python3 manage.py runserver
+```
+
+</details>
+
+<details>
+<summary><b>❓ ModuleNotFoundError: No module named 'django'</b></summary>
+
+**Error:** Module not found
+
+**Solution:** Ensure virtual environment is activated
+```bash
+# Check if (venv) appears in terminal
+source venv/bin/activate  # Linux/macOS
+pip install -r requirements.txt
+```
+
+</details>
+
+<details>
+<summary><b>❓ Port 8000 already in use</b></summary>
+
+**Error:** `Address already in use`
+
+**Solution:** Use a different port
+```bash
+python manage.py runserver 8001
+python manage.py runserver 3000
+```
+
+</details>
+
+<details>
+<summary><b>❓ Database migration errors</b></summary>
+
+**Error:** Migration conflict
+
+**Solution:** Reset migrations (dev only!)
+```bash
+python manage.py migrate --fake-initial
+# Or fresh start:
+rm db.sqlite3
+python manage.py migrate
+```
+
+</details>
+
+<details>
+<summary><b>❓ Static files not loading</b></summary>
+
+**Error:** CSS/JS files missing
+
+**Solution:** Collect static files
+```bash
+python manage.py collectstatic --noinput
+```
+
+</details>
 
 ---
 
@@ -208,57 +605,155 @@ Access the admin panel at `/admin/` with your superuser credentials:
 
 ```
 url-shortner/
-├── files/
-│   └── screen-demo.gif
-├── manage.py
-├── requirements.txt
-├── Readme
-├── app/
-│   ├── models.py
-│   ├── views.py
-│   ├── urls.py
-│   ├── admin.py
-│   └── ...
-└── ...
+│
+├── 📁 config/                    # Django Configuration
+│   ├── settings.py              # Settings file
+│   ├── urls.py                  # URL routing
+│   ├── wsgi.py                  # WSGI config
+│   └── asgi.py                  # ASGI config
+│
+├── 📁 shortner/                 # Main App
+│   ├── models.py               # Database models
+│   ├── views.py                # View logic
+│   ├── urls.py                 # App URLs
+│   ├── admin.py                # Admin configuration
+│   ├── forms.py                # Form classes
+│   └── migrations/             # Database migrations
+│
+├── 📁 users/                    # User App
+│   ├── models.py               # User models
+│   ├── views.py                # Auth views
+│   ├── forms.py                # Auth forms
+│   └── migrations/
+│
+├── 📁 templates/               # HTML Templates
+│   ├── layouts/               # Base templates
+│   ├── shortner/              # App templates
+│   ├── accounts/              # Auth templates
+│   └── includes/              # Reusable components
+│
+├── 📁 static/                  # Static Files
+│   ├── css/                   # Stylesheets
+│   ├── js/                    # JavaScript
+│   └── images/                # Images & icons
+│
+├── 📁 files/                   # Media Files
+│   └── screen-demo.gif        # Demo animation
+│
+├── manage.py                   # Django CLI
+├── requirements.txt            # Dependencies
+├── db.sqlite3                  # SQLite Database
+└── Readme                      # This file!
 ```
 
 ---
 
-## 🔧 Troubleshooting
+## 🌟 Key Highlights
 
-### Issue: `python: command not found`
-**Solution:** Use `python3` instead of `python` on Linux/macOS.
-
-### Issue: `ModuleNotFoundError: No module named 'django'`
-**Solution:** Activate your virtual environment and run `pip install -r requirements.txt`.
-
-### Issue: Database migration errors
-**Solution:** Run `python manage.py migrate --fake-initial` if needed.
-
-### Issue: Port 8000 already in use
-**Solution:** Run on a different port: `python manage.py runserver 8001`
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+| Feature | Benefit |
+|---------|---------|
+| 🎯 **Simple Interface** | One-click URL shortening |
+| 📊 **Real-time Analytics** | Track clicks instantly |
+| 🔒 **Secure** | Industry-standard security |
+| ⚡ **Fast** | Lightning-quick redirects |
+| 📱 **Responsive** | Works on all devices |
+| 🎨 **Beautiful UI** | Modern Bootstrap design |
+| 👨‍💻 **Developer Friendly** | Clean, documented code |
+| 🚀 **Scalable** | Ready for production |
 
 ---
 
-## 👤 Author
+## 🚀 Deployment Options
+
+### Local Development
+```bash
+python manage.py runserver
+```
+
+### Production with Gunicorn
+```bash
+pip install gunicorn
+gunicorn config.wsgi:application --bind 0.0.0.0:8000
+```
+
+### Deploy to Heroku
+```bash
+heroku create your-app-name
+git push heroku main
+heroku run python manage.py migrate
+heroku run python manage.py createsuperuser
+```
+
+### Deploy with Docker
+```bash
+docker build -t url-shortner .
+docker run -p 8000:8000 url-shortner
+```
+
+---
+
+## 📄 License & Credits
+
+### License
+This project is licensed under the **MIT License** - see [LICENSE](LICENSE) for details.
+
+```
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+...
+```
+
+### Author 👨‍💻
 
 **Vishnu VM**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/vishnuvm1997/)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/vishnuvm1122)
+- 🔗 Portfolio: [vishnuvm.com](https://vishnuvm.com)
+- 💼 LinkedIn: [linkedin.com/in/vishnuvm1997](https://www.linkedin.com/in/vishnuvm1997/)
+- 🐙 GitHub: [@vishnuvm1122](https://github.com/vishnuvm1122)
+- 📧 Email: vishnuedappal1122@gmail.com
 
 ---
 
 ## ⭐ Show Your Support
 
-If you found this project helpful, please give it a ⭐ on GitHub!
+<div align="center">
+
+If this project helped you, please give it a **⭐ Star**!
+
+It helps others discover this project and motivates development.
+
+[![Star us on GitHub](https://img.shields.io/badge/Star%20us%20on%20GitHub-%E2%AD%90-yellow?style=for-the-badge)](https://github.com/vishnuvm1122/url-shortner)
+
+**Fork • Star • Share • Contribute** 🚀
+
+</div>
 
 ---
 
-**Last Updated:** 2026 | Made with ❤️ by Vishnu VM
+## 📊 Stats & Metrics
+
+<div align="center">
+
+![GitHub followers](https://img.shields.io/github/followers/vishnuvm1122?style=social)
+![GitHub User's stars](https://img.shields.io/github/stars/vishnuvm1122?style=social)
+
+</div>
+
+---
+
+<div align="center">
+
+## 🙏 Thank You!
+
+**Made with ❤️ by Vishnu VM**
+
+Last Updated: 2026 | Active Development ✅
+
+[⬆ Back to top](#-url-shortener--django-project)
+
+</div>
