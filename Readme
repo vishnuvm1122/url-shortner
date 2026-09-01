@@ -1,1950 +1,264 @@
-🚀 URL Shortener — Django
+# 🚀 URL Shortener — Django Project
 
-A production-oriented Django URL Shortener application for creating, managing, tracking, and administering shortened URLs. The project includes user authentication, a personal dashboard, AJAX-based URL management, click analytics, device/browser detection, click-history management, and a customized Django administration interface.
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![Django](https://img.shields.io/badge/Django-3.x%2F4.x-green)](https://www.djangoproject.com/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)](https://getbootstrap.com/)
+[![License](https://img.shields.io/badge/License-MIT-orange)](LICENSE)
 
-Project: URL Shortener
-Backend: Django / Python
-Frontend: HTML, CSS, JavaScript, Bootstrap 5
-Database: SQLite by default, PostgreSQL supported
-Static files: WhiteNoise
-Deployment: Gunicorn / Heroku-compatible configuration
-Repository: https://github.com/vishnuvm1122/url-shortner
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Vishnu-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vishnuvm1997/)
 
-📚 Table of Contents
+---
 
-Project Overview
+## 📺 Demo
 
-Key Features
+![screen-demo](./files/screen-demo.gif)
 
-Feature Details
+---
 
-Application Architecture
+## 📋 Table of Contents
 
-Technology Stack
+- [Project Description](#-project-description)
+- [Features](#-features)
+- [Technologies Used](#-technologies-used)
+- [Setup Instructions](#-setup-instructions)
+- [Usage](#-usage)
+- [Admin Panel](#-admin-panel)
+- [License](#-license)
 
-Project Structure
+---
 
-Database Design
+## 📝 Project Description
 
-URL Shortening Workflow
+A Django-based **URL Shortener** application that allows users to:
 
-Click Tracking Workflow
+- ✨ Create **short URLs** for long URLs
+- 📊 Track the number of clicks per URL
+- 🖥️ Manage URLs in a **user dashboard**
+- 🔗 Redirect short URLs to the original URLs
+- 🕵️ View click details including **IP, browser, platform, and device**
 
-Authentication and User Management
+---
 
-Dashboard
+## ✨ Features
 
-AJAX URL Management
+### 🔐 User Authentication & Profile
 
-Admin Panel
+- 📝 **User Registration** with username, email, and password validation
+- 🔐 **Login & Logout** functionality with session management
+- 🛠️ **Profile Update** (username, email, first name, last name)
+- 🔑 **Password Change** with old password verification
+- 💻 Bootstrap 5 styled forms with client-side validation
+- 📢 Flash messages for user feedback
 
-Installation
+### 🔗 URL Shortening
 
-Configuration
+- 🔹 Create **short URLs** with unique 6-character or 10-character UIDs
+- ✏️ **Edit** or **delete** your own URLs anytime
+- 📈 Auto-increment click count per URL
+- 🔄 Redirect short URL to the original URL safely
+- ⚡ **AJAX support** for dynamic URL creation, editing, and deletion
 
-Database Setup
+### 📊 Click Tracking
 
-Running the Application
+- 🌐 Records **IP address, browser, platform, and device** for each click
+- 📋 Click details displayed per URL for logged-in users
+- ❌ Ability to **delete individual click records**
+- 🛠️ Admin panel support for viewing detailed click history
 
-Production Deployment
+### 🎛️ Admin Panel
 
-Security
+- ✅ Full management of `Url` and `UrlClick` models
+- 🔎 **Search** and **filter** URLs and clicks
+- 📊 Click counts and URL preview directly in admin
+- 🔗 Clickable short URL links for quick testing
 
-Performance and Scalability
+---
 
-Testing
+## 🛠️ Technologies Used
 
-Troubleshooting
+| Technology | Purpose |
+|------------|---------|
+| **Python 3.8+** | Backend logic |
+| **Django 3.x/4.x** | Web framework |
+| **SQLite / PostgreSQL** | Database |
+| **Bootstrap 5** | Front-end styling |
+| **HTML / CSS / JavaScript** | Web UI |
+| **user-agents** | Detect browser & device info |
 
-API/Route Reference
+---
 
-Advantages
+## 📦 Setup Instructions
 
-Limitations and Recommended Enhancements
+### Prerequisites
 
-Backup and Maintenance
+Before you begin, ensure you have the following installed:
+- ✅ Python 3.8 or higher
+- ✅ pip (Python package manager)
+- ✅ virtualenv (optional but recommended)
+- ✅ Git
 
-License
+### Step-by-Step Installation
 
-🔎 Project Overview
+#### 1️⃣ Clone the Repository
 
-The URL Shortener converts long URLs into compact URLs that are easier to share.
-
-Example:
-
-Original:
-https://example.com/products/category/security/product?id=12345
-
-Short:
-https://your-domain.com/aB12x9
-
-When a visitor opens the short URL, the application:
-
-Finds the matching URL record.
-
-Verifies that the URL is active.
-
-Atomically increments the click counter.
-
-Collects the visitor's IP address.
-
-Parses the browser/device user-agent.
-
-Stores click metadata.
-
-Redirects the visitor to the original URL.
-
-The application is designed around two major areas:
-
-User side: registration, login, profile, URL creation, URL management and analytics.
-
-Administrator side: centralized management of URLs and click records.
-
-✨ Key Features
-
-👤 User Authentication
-
-User registration
-
-Username and email
-
-Password confirmation
-
-Login
-
-Logout
-
-Session-based authentication
-
-Profile update
-
-First name and last name
-
-Email update
-
-Password change
-
-Django password validation
-
-Login-protected dashboard and management actions
-
-Bootstrap-styled forms
-
-Success/error flash messages
-
-🔗 URL Shortening
-
-Create short URLs from long URLs
-
-Unique short identifier
-
-User ownership
-
-Active/inactive URL state
-
-Original URL storage
-
-Creation timestamp
-
-Short URL generation
-
-Short URL redirection
-
-URL editing
-
-URL deletion
-
-AJAX-based create/edit/delete operations
-
-📊 Click Tracking
-
-For each redirect, the system can store:
-
-IP address
-
-Raw User-Agent
-
-Operating-system/platform family
-
-Browser family
-
-Device family
-
-Click timestamp
-
-URL associated with the click
-
-📈 Dashboard
-
-The authenticated dashboard provides:
-
-User's URLs
-
-Total URL count
-
-Total click count
-
-Short URL display
-
-Original URL display
-
-URL management actions
-
-Click-history access
-
-Dynamic AJAX operations
-
-🛠️ Admin Panel
-
-Django Admin provides:
-
-URL management
-
-Click-record management
-
-Search
-
-Filtering
-
-Ordering
-
-User association
-
-Click-count visibility
-
-Active/inactive status
-
-Original URL preview
-
-Short URL preview
-
-🧩 Feature Details
-
-1. Registration
-
-Users can create an account using:
-
-Username
-
-Email
-
-Password
-
-Password confirmation
-
-The registration form checks that the email address is not already registered.
-
-The application uses Django's built-in UserCreationForm, providing Django's standard password validation behavior.
-
-2. Login
-
-Users authenticate using:
-
-Username
-Password
-
-Successful authentication creates a Django session and redirects the user to the dashboard.
-
-Invalid credentials produce an error message.
-
-3. Logout
-
-Authenticated users can log out through the account logout route.
-
-The Django session is terminated and the user is redirected to the login page.
-
-4. Profile Management
-
-Users can update:
-
-Username
-
-Email
-
-First name
-
-Last name
-
-The profile page uses Django forms and Bootstrap styling.
-
-5. Password Change
-
-Users can change their password using the current password and a new password.
-
-The application uses:
-
-update_session_auth_hash(request, user)
-
-This keeps the current authenticated session valid after a successful password change.
-
-🔗 URL Shortening
-
-Short ID
-
-The current implementation creates a short identifier using a UUID-derived value for the create operation.
-
-The Url model also contains a save-time fallback that generates a UUID-based identifier when no identifier is supplied.
-
-The short identifier is unique at the database level:
-
-uuid = models.CharField(max_length=10, unique=True, blank=True)
-
-Production recommendation: use a dedicated collision-resistant generator with retry logic or a deterministic encoding strategy for very high-volume systems.
-
-🗃️ Database Design
-
-The application primarily uses two models.
-
-Url
-
-Field
-
-Type
-
-Purpose
-
-link
-
-URLField
-
-Original destination URL
-
-uuid
-
-CharField
-
-Unique short identifier
-
-user
-
-ForeignKey
-
-Owner of the URL
-
-click_count
-
-PositiveIntegerField
-
-Total redirect count
-
-is_active
-
-BooleanField
-
-Enables/disables redirect
-
-created_at
-
-DateTimeField
-
-Creation time
-
-Relationship:
-
-User
-  │
-  └───< Url
-           │
-           └───< UrlClick
-
-UrlClick
-
-Field
-
-Type
-
-Purpose
-
-url
-
-ForeignKey
-
-Related shortened URL
-
-ip_address
-
-GenericIPAddressField
-
-Visitor IP
-
-user_agent
-
-TextField
-
-Raw browser User-Agent
-
-platform
-
-CharField
-
-Operating-system family
-
-browser
-
-CharField
-
-Browser family
-
-device
-
-CharField
-
-Device family
-
-created_at
-
-DateTimeField
-
-Click timestamp
-
-Because UrlClick uses a foreign key to Url, deleting a URL also deletes its associated click records.
-
-🔄 URL Redirect Workflow
-
-The redirect route follows this logical sequence:
-
-Visitor
-   │
-   ▼
-/<short-id>/
-   │
-   ▼
-Find active Url
-   │
-   ├── Not found → 404
-   │
-   ▼
-Increment click_count
-   │
-   ▼
-Read User-Agent
-   │
-   ▼
-Detect platform/browser/device
-   │
-   ▼
-Store UrlClick
-   │
-   ▼
-Redirect
-   │
-   ▼
-Original URL
-
-The click counter uses Django's F() expression:
-
-Url.objects.filter(pk=url_obj.pk).update(
-    click_count=F('click_count') + 1
-)
-
-This is preferable to a simple read-modify-write operation because the database performs the increment atomically.
-
-📊 Click Analytics
-
-The click-history page displays records associated with a user's URL.
-
-A click can contain:
-
-IP Address
-Browser
-Platform
-Device
-Date/Time
-
-This provides basic traffic intelligence without requiring a separate analytics platform.
-
-Possible uses
-
-Identify browser distribution
-
-Identify desktop/mobile traffic
-
-Investigate suspicious traffic patterns
-
-Understand URL usage
-
-Audit individual redirects
-
-Review click activity over time
-
-Privacy note: IP addresses and User-Agent information can be personal or potentially identifying data. Production deployments should define an appropriate retention policy, privacy notice, access controls, and legal basis for collection.
-
-🖥️ Dashboard
-
-The dashboard is available to authenticated users.
-
-It calculates:
-
-Total URLs
-Total Clicks
-User-owned URL list
-
-Short URLs are converted into absolute URLs using the current request host.
-
-Example:
-
-https://your-domain.com/Ab12x9/
-
-Users can manage their own URLs from the dashboard.
-
-⚡ AJAX URL Management
-
-The project supports asynchronous operations for URL management.
-
-Create
-
-POST /create/
-
-Returns JSON containing information such as:
-
-{
-    "id": 1,
-    "link": "https://example.com",
-    "click_count": 0,
-    "created_at": "2026-09-01 12:00:00",
-    "full_short_url": "http://127.0.0.1:8000/abc123"
-}
-
-Edit
-
-POST /edit/<id>/
-
-Updates the user's own URL.
-
-Delete
-
-POST /delete/<id>/
-
-Deletes the user's own URL.
-
-Advantages of AJAX
-
-No complete page refresh
-
-Faster user experience
-
-Dynamic dashboard operations
-
-Easier inline management
-
-JSON responses suitable for JavaScript UI updates
-
-🔐 Ownership and Authorization
-
-URL modification views use:
-
-get_object_or_404(
-    Url,
-    id=id,
-    user=request.user
-)
-
-This means a logged-in user can only edit/delete URLs belonging to that user.
-
-Click-history access follows the same ownership model.
-
-This is an important protection against insecure direct object reference (IDOR) vulnerabilities.
-
-🛡️ Admin Panel
-
-The application registers both models with Django Admin.
-
-URL Admin
-
-Available features include:
-
-ID
-
-Short URL
-
-Original URL
-
-User
-
-Click count
-
-Active status
-
-Creation date
-
-Search
-
-Filtering
-
-Ordering
-
-Search fields include:
-
-uuid
-link
-user username
-
-Click Admin
-
-Available features include:
-
-Click ID
-
-URL
-
-IP address
-
-Browser
-
-Platform
-
-Device
-
-Creation date
-
-Search
-
-Filtering
-
-Ordering
-
-🎨 Frontend
-
-The project uses Bootstrap 5 assets and Django templates.
-
-Important templates include:
-
-templates/layouts/base.html
-templates/shortner/home.html
-templates/shortner/clicks.html
-templates/accounts/login.html
-templates/accounts/register.html
-templates/accounts/profile.html
-
-Reusable components include:
-
-templates/includes/navbar.html
-templates/includes/sidebar.html
-templates/includes/footer.html
-templates/includes/messages.html
-templates/includes/css.html
-templates/includes/script.html
-
-This component structure makes UI maintenance easier.
-
-🧱 Application Architecture
-
-Browser
-   │
-   ▼
-Django URL Router
-   │
-   ├───────────────┐
-   ▼               ▼
-Users App       Shortner App
-   │               │
-   ▼               ▼
-Authentication    URL Management
-Profile           Redirects
-Password          Click Tracking
-   │               │
-   └───────┬───────┘
-           ▼
-        Django ORM
-           │
-           ▼
- SQLite / PostgreSQL
-
-🛠️ Technology Stack
-
-Technology
-
-Purpose
-
-Python
-
-Application programming language
-
-Django
-
-Backend web framework
-
-Django ORM
-
-Database abstraction
-
-SQLite
-
-Default development database
-
-PostgreSQL
-
-Recommended production database
-
-Bootstrap 5
-
-Frontend UI
-
-HTML5
-
-Page structure
-
-CSS3
-
-Styling
-
-JavaScript
-
-AJAX/dynamic UI
-
-user-agents
-
-Browser/device detection
-
-WhiteNoise
-
-Static file serving
-
-Gunicorn
-
-Production WSGI server
-
-django-jazzmin
-
-Django Admin UI customization
-
-dj-database-url
-
-Database URL configuration
-
-psycopg2
-
-PostgreSQL connectivity
-
-📁 Project Structure
-
-url-shortner/
-│
-├── config/
-│   ├── __init__.py
-│   ├── asgi.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-│
-├── shortner/
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py
-│   ├── tests.py
-│   ├── urls.py
-│   ├── views.py
-│   └── migrations/
-│
-├── users/
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── forms.py
-│   ├── models.py
-│   ├── tests.py
-│   ├── urls.py
-│   ├── views.py
-│   └── migrations/
-│
-├── templates/
-│   ├── accounts/
-│   ├── includes/
-│   ├── layouts/
-│   └── shortner/
-│
-├── static/
-│   ├── css/
-│   └── icon/
-│
-├── manage.py
-├── requirements.txt
-├── db.sqlite3
-└── README.md
-
-💻 Installation
-
-Requirements
-
-Recommended:
-
-Python 3.10+
-
-pip
-
-virtualenv/venv
-
-Git
-
-SQLite for development
-
-PostgreSQL for production
-
-The supplied dependency file currently pins Django 6.0.2, so use a Python version supported by that Django release.
-
-1. Clone the repository
-
+```bash
 git clone https://github.com/vishnuvm1122/url-shortner.git
 cd url-shortner
+```
 
-2. Create a virtual environment
+#### 2️⃣ Create Virtual Environment
 
-Linux/macOS
-
+```bash
+# Linux/macOS
 python3 -m venv venv
-source venv/bin/activate
 
-Windows
-
+# Windows
 python -m venv venv
-venv\Scripts\activate
+```
 
-3. Upgrade pip
+#### 3️⃣ Activate Virtual Environment
 
-python -m pip install --upgrade pip
-
-4. Install dependencies
-
-pip install -r requirements.txt
-
-🗄️ Database Setup
-
-Run migrations:
-
-python manage.py migrate
-
-Create a Django administrator:
-
-python manage.py createsuperuser
-
-Follow the prompts:
-
-Username
-Email
-Password
-
-🔍 Validate the Project
-
-Run:
-
-python manage.py check
-
-For deployment checks:
-
-python manage.py check --deploy
-
-Resolve reported security warnings before production deployment.
-
-▶️ Run the Development Server
-
-python manage.py runserver
-
-Open:
-
-http://127.0.0.1:8000/
-
-Admin:
-
-http://127.0.0.1:8000/admin/
-
-⚙️ Configuration
-
-The project reads several values from environment variables.
-
-SECRET_KEY
-
-Do not use the development fallback in production.
-
-Linux:
-
-export SECRET_KEY='replace-with-a-long-random-secret'
-
-DEBUG
-
-Development:
-
-export DEBUG=True
-
-Production:
-
-export DEBUG=False
-
-ALLOWED_HOSTS
-
-Example:
-
-export ALLOWED_HOSTS='example.com,www.example.com'
-
-Do not use:
-
-*
-
-for a hardened production deployment unless there is a specific reason and compensating controls.
-
-🔒 Production Security Configuration
-
-The current settings are convenient for development but should be hardened before public deployment.
-
-Recommended production settings include:
-
-DEBUG = False
-
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
-X_FRAME_OPTIONS = "DENY"
-SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
-
-Also configure:
-
-ALLOWED_HOSTS = [
-    "your-domain.com",
-    "www.your-domain.com",
-]
-
-For HTTPS deployments, configure HSTS carefully:
-
-SECURE_HSTS_SECONDS = 31536000
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-
-Only enable HSTS preload after confirming the entire domain and all relevant subdomains support HTTPS.
-
-🌐 PostgreSQL Configuration
-
-The project uses dj-database-url, allowing a database URL to be supplied through the environment.
-
-Example:
-
-export DATABASE_URL='postgresql://username:password@localhost:5432/urlshortener'
-
-Then:
-
-python manage.py migrate
-
-For production, PostgreSQL is preferable to SQLite because it provides better concurrency, reliability, backup options, and scaling characteristics.
-
-📦 Static Files
-
-Collect static assets before deployment:
-
-python manage.py collectstatic --noinput
-
-The project includes WhiteNoise support for static file delivery.
-
-🚀 Gunicorn Deployment
-
-Install Gunicorn:
-
-pip install gunicorn
-
-Run:
-
-gunicorn config.wsgi:application
-
-For a server binding:
-
-gunicorn --bind 0.0.0.0:8000 config.wsgi:application
-
-For production, place Nginx or another properly configured reverse proxy in front of Gunicorn.
-
-☁️ Deployment Checklist
-
-Before deployment:
-
-python manage.py check --deploy
-python manage.py migrate
-python manage.py collectstatic --noinput
-
-Verify:
-
-DEBUG=False
-
-Strong SECRET_KEY
-
-Correct ALLOWED_HOSTS
-
-HTTPS
-
-Secure cookies
-
-Database backups
-
-Log monitoring
-
-Error monitoring
-
-Restricted admin access
-
-Dependency updates
-
-Privacy policy
-
-Click-data retention policy
-
-🔐 Security Features
-
-The project benefits from several Django security mechanisms:
-
-Authentication
-
-Django authentication protects user-only views.
-
-CSRF
-
-Django's CSRF middleware protects POST requests when forms/AJAX requests are correctly configured with CSRF tokens.
-
-Authorization
-
-URL management filters objects by:
-
-user=request.user
-
-Password Validation
-
-Django validators help reject weak/common passwords.
-
-Clickjacking Protection
-
-Django's XFrameOptions middleware is enabled.
-
-ORM Protection
-
-Django ORM parameterization helps protect database operations from classic SQL injection when used correctly.
-
-Atomic Counter
-
-F() expressions prevent simple lost-update problems when incrementing click counters.
-
-⚠️ Important Security Improvements for Production
-
-1. Trusted Proxy IP Handling
-
-The current helper reads:
-
-HTTP_X_FORWARDED_FOR
-
-Do not blindly trust this header on an internet-facing application.
-
-Configure trusted reverse proxies and obtain client IPs according to your deployment architecture.
-
-2. URL Validation
-
-The current model uses Django's URLField, but production systems should additionally consider:
-
-Allowed schemes
-
-Rejecting dangerous schemes
-
-Normalizing URLs
-
-Blocking unsupported protocols
-
-Optional domain deny/allow lists
-
-Abuse detection
-
-At minimum, allow HTTP/HTTPS destinations only.
-
-3. SSRF / Abuse Considerations
-
-A public URL shortener can be abused to distribute malicious links or disguise destinations.
-
-Recommended controls:
-
-Rate limiting
-
-Abuse reporting
-
-URL reputation checks
-
-Malware/phishing scanning
-
-Domain blocklists
-
-User quotas
-
-CAPTCHA for suspicious traffic
-
-Administrative URL disable controls
-
-Audit logging
-
-🚦 Rate Limiting
-
-A production URL shortener should rate-limit:
-
-Registration
-Login
-URL creation
-URL editing
-URL deletion
-Redirect requests
-Admin login
-
-Possible approaches:
-
-Reverse-proxy rate limiting
-
-Django middleware
-
-Redis-backed rate limiting
-
-Django REST/framework-specific throttling if APIs are added
-
-📈 Performance
-
-Current dashboard click aggregation performs Python-side summation:
-
-sum(url.click_count for url in user_urls)
-
-For a large system, prefer database aggregation:
-
-from django.db.models import Sum
-
-total_clicks = user_urls.aggregate(
-    total=Sum("click_count")
-)["total"] or 0
-
-Recommended indexes for high traffic:
-
-class Meta:
-    indexes = [
-        models.Index(fields=["user", "-created_at"]),
-        models.Index(fields=["is_active", "uuid"]),
-    ]
-
-Click records should also be indexed for common analytics queries.
-
-🧠 Scalability Architecture
-
-For a larger deployment:
-
-                    ┌──────────────┐
-                    │    Nginx     │
-                    └──────┬───────┘
-                           │
-                  ┌────────▼────────┐
-                  │ Load Balancer   │
-                  └────────┬────────┘
-                           │
-              ┌────────────┼────────────┐
-              ▼            ▼            ▼
-          Gunicorn      Gunicorn      Gunicorn
-          Worker 1      Worker 2      Worker 3
-              │            │            │
-              └────────────┼────────────┘
-                           ▼
-                    Django Application
-                           │
-             ┌─────────────┼─────────────┐
-             ▼             ▼             ▼
-        PostgreSQL       Redis        Background Jobs
-             │
-             ▼
-          Backups
-
-Redis can be used for:
-
-Caching
-
-Rate limiting
-
-Temporary counters
-
-Queues
-
-Background workers can process:
-
-Analytics aggregation
-
-Abuse scanning
-
-Notifications
-
-Cleanup
-
-Reporting
-
-📊 Advanced Analytics — Recommended Upgrade
-
-The current implementation provides basic click records.
-
-An advanced analytics module could add:
-
-Clicks by day
-Clicks by hour
-Unique visitors
-Returning visitors
-Top URLs
-Browser statistics
-Operating-system statistics
-Device statistics
-Referrer statistics
-Country
-Region/city where legally and technically appropriate
-Campaign parameters
-Conversion tracking
-
-Example dashboard:
-
-Total URLs       120
-Total Clicks   8,542
-Active URLs      108
-Today Clicks     431
-
-Charts:
-
-Clicks
-  │
-  │       █
-  │   █   █
-  │   █ █ █
-  │ █ █ █ █
-  └────────────
-    Mon Tue Wed Thu
-
-🏷️ Recommended Advanced URL Features
-
-A future version can support:
-
-Custom aliases
-
-Example:
-
-/office
-/security
-/github
-
-Expiration
-
-Expires: 2026-12-31 23:59
-
-After expiration:
-
-410 Gone
-
-or a custom expiration page.
-
-Password-protected URLs
-
-Example:
-
-/abc123
-      ↓
-Enter password
-      ↓
-Original URL
-
-One-time links
-
-The URL automatically becomes inactive after the first successful access.
-
-Maximum click limit
-
-Example:
-
-Maximum clicks: 100
-
-After 100 clicks:
-
-URL expired
-
-QR Codes
-
-Generate a QR code for each short URL.
-
-Tags
-
-Example:
-
-Marketing
-Security
-Internal
-Social Media
-Campaign
-
-Notes
-
-Users can attach internal descriptions to URLs.
-
-🔗 API Expansion
-
-A future REST API could expose:
-
-POST /api/urls/
-GET /api/urls/
-GET /api/urls/<id>/
-PATCH /api/urls/<id>/
-DELETE /api/urls/<id>/
-GET /api/urls/<id>/analytics/
-
-Example creation request:
-
-{
-    "link": "https://example.com",
-    "alias": "example"
-}
-
-Example response:
-
-{
-    "id": 42,
-    "short_code": "example",
-    "short_url": "https://your-domain.com/example",
-    "clicks": 0,
-    "active": true
-}
-
-For an API implementation, add proper authentication, throttling, serializers, permissions, pagination and schema documentation.
-
-🧪 Testing
-
-Run Django's test suite:
-
-python manage.py test
-
-Recommended tests include:
-
-Authentication
-
-Registration success
-
-Duplicate username
-
-Duplicate email
-
-Invalid login
-
-Logout
-
-Profile update
-
-Password change
-
-URL Management
-
-Create URL
-
-Empty URL rejection
-
-Edit own URL
-
-Prevent editing another user's URL
-
-Delete own URL
-
-Prevent deleting another user's URL
-
-Redirect
-
-Valid short URL redirects
-
-Inactive URL is not redirected
-
-Click count increases
-
-Click record is created
-
-Browser/device metadata is stored
-
-Security
-
-CSRF
-
-Authorization
-
-IDOR
-
-Rate limiting
-
-Host header behavior
-
-URL scheme validation
-
-🐞 Troubleshooting
-
-ModuleNotFoundError
-
-Activate the virtual environment:
-
+```bash
+# Linux/macOS
 source venv/bin/activate
 
-Then:
+# Windows
+venv\Scripts\activate
+```
 
+#### 4️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-Migration error
+#### 5️⃣ Apply Database Migrations
 
-Run:
-
-python manage.py makemigrations
+```bash
 python manage.py migrate
+```
 
-Check:
+#### 6️⃣ Create Superuser (Admin Account)
 
-python manage.py showmigrations
+```bash
+python manage.py createsuperuser
+```
 
-Static files not loading
+Follow the prompts to create an admin account:
+- Username: `admin` (or your choice)
+- Email: `admin@example.com` (or your email)
+- Password: (enter a strong password)
 
-Run:
+#### 7️⃣ Run Development Server
 
-python manage.py collectstatic
+```bash
+python manage.py runserver
+```
 
-Then verify:
+🎉 **Server is running!** Open your browser and visit:
+- 🏠 **Application:** http://127.0.0.1:8000/
+- 🎛️ **Admin Panel:** http://127.0.0.1:8000/admin/
 
-python manage.py check --deploy
+---
 
-Port already in use
+## 🚀 Usage
 
-Use another port:
+### Creating a Short URL
 
-python manage.py runserver 8001
+1. Register a new account or login
+2. Navigate to the **Dashboard**
+3. Enter your long URL in the input field
+4. Click **"Shorten URL"**
+5. Your short URL will be generated with a unique code
+6. Share your short URL!
 
-Permission denied
+### Viewing Click Analytics
 
-Avoid running the Django development server as root.
+1. Go to **Dashboard**
+2. Select any shortened URL
+3. View detailed click information:
+   - 🌐 IP Address
+   - 🌐 Browser & Platform
+   - 📱 Device Information
+   - ⏰ Click Timestamp
 
-Use a normal user account and a virtual environment.
+### Managing Your URLs
 
-🧭 API/Route Reference
+- ✏️ **Edit:** Modify the original URL anytime
+- 🗑️ **Delete:** Remove URLs you no longer need
+- 📊 **Track:** Monitor clicks in real-time
 
-Method
+---
 
-Route
+## 🎛️ Admin Panel
 
-Authentication
+Access the admin panel at `/admin/` with your superuser credentials:
 
-Purpose
+### Admin Features
 
-GET
+- 🔎 Search and filter URLs by user, date, or custom criteria
+- 📊 View click statistics per URL
+- 🔗 Directly access short URLs from the admin panel
+- 🗑️ Bulk delete URLs or click records
+- 👥 Manage user accounts and permissions
 
-/
+---
 
-Optional
+## 📂 Project Structure
 
-Landing/login redirect
+```
+url-shortner/
+├── files/
+│   └── screen-demo.gif
+├── manage.py
+├── requirements.txt
+├── Readme
+├── app/
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── admin.py
+│   └── ...
+└── ...
+```
 
-GET
+---
 
-/dashboard/
+## 🔧 Troubleshooting
 
-Required
+### Issue: `python: command not found`
+**Solution:** Use `python3` instead of `python` on Linux/macOS.
 
-User dashboard
+### Issue: `ModuleNotFoundError: No module named 'django'`
+**Solution:** Activate your virtual environment and run `pip install -r requirements.txt`.
 
-POST
+### Issue: Database migration errors
+**Solution:** Run `python manage.py migrate --fake-initial` if needed.
 
-/create/
+### Issue: Port 8000 already in use
+**Solution:** Run on a different port: `python manage.py runserver 8001`
 
-Required
+---
 
-Create short URL
+## 📄 License
 
-GET
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
-/<uuid>/
+---
 
-Public
+## 👤 Author
 
-Redirect
+**Vishnu VM**
 
-POST
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/vishnuvm1997/)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/vishnuvm1122)
 
-/edit/<id>/
+---
 
-Required
+## ⭐ Show Your Support
 
-Edit owned URL
+If you found this project helpful, please give it a ⭐ on GitHub!
 
-POST
+---
 
-/delete/<id>/
-
-Required
-
-Delete owned URL
-
-GET
-
-/clicks/url/<id>/
-
-Required
-
-View click history
-
-POST
-
-/click/delete/<id>/
-
-Required
-
-Delete owned click
-
-GET
-
-/accounts/login/
-
-Public
-
-Login
-
-POST
-
-/accounts/login/
-
-Public
-
-Authenticate
-
-GET/POST
-
-/accounts/register/
-
-Public
-
-Registration
-
-GET
-
-/accounts/logout/
-
-Required
-
-Logout
-
-GET/POST
-
-/accounts/profile/
-
-Required
-
-Profile
-
-GET/POST
-
-/accounts/change/password/
-
-Required
-
-Password change
-
-GET
-
-/admin/
-
-Admin
-
-Django admin
-
-🛡️ Ownership Matrix
-
-Action
-
-Guest
-
-User
-
-Admin
-
-View login
-
-✅
-
-Redirected
-
-Redirected
-
-Register
-
-✅
-
-Redirected
-
-Redirected
-
-Create URL
-
-❌
-
-✅
-
-Depends on account
-
-Redirect URL
-
-✅
-
-✅
-
-✅
-
-Edit own URL
-
-❌
-
-✅
-
-Admin UI
-
-Edit another user's URL
-
-❌
-
-❌
-
-✅
-
-Delete own URL
-
-❌
-
-✅
-
-Admin UI
-
-View own clicks
-
-❌
-
-✅
-
-✅
-
-View another user's clicks
-
-❌
-
-❌
-
-✅
-
-Manage all URLs
-
-❌
-
-❌
-
-✅
-
-Manage click records
-
-❌
-
-Own records
-
-✅
-
-📌 Advantages
-
-1. Simple Architecture
-
-Django's built-in architecture keeps the application easy to understand and maintain.
-
-2. User Isolation
-
-Users manage their own URL objects instead of accessing another user's resources.
-
-3. Built-in Authentication
-
-The project uses Django's mature authentication framework instead of implementing password handling from scratch.
-
-4. Click Analytics
-
-Every redirect can produce a useful click record.
-
-5. AJAX Experience
-
-URL management can happen without full page reloads.
-
-6. Admin Control
-
-Administrators can search, filter and manage URL and click data.
-
-7. Database Flexibility
-
-SQLite is convenient for development while PostgreSQL is suitable for production.
-
-8. Deployment Friendly
-
-The project includes:
-
-Gunicorn
-
-WhiteNoise
-
-Database URL configuration
-
-Heroku-compatible settings
-
-9. Extensible
-
-The application can evolve into:
-
-REST API
-
-SaaS URL shortener
-
-QR generator
-
-Advanced analytics platform
-
-Campaign tracking system
-
-Enterprise internal link manager
-
-10. Good Security Foundation
-
-Django provides:
-
-CSRF protection
-
-Password hashing
-
-Authentication
-
-ORM
-
-Security middleware
-
-Permission decorators
-
-Session management
-
-⚠️ Limitations of the Current Version
-
-The supplied application is functional, but several improvements are recommended before operating it as a public high-traffic service.
-
-Current limitations
-
-Development settings include an insecure fallback secret key.
-
-ALLOWED_HOSTS defaults to *.
-
-DEBUG defaults to enabled.
-
-Short-code generation should have explicit collision retry logic.
-
-There is no built-in rate limiting.
-
-There is no URL reputation/malware scanning.
-
-IP/User-Agent retention is not configurable.
-
-Click analytics are basic.
-
-No Redis caching layer.
-
-No background task queue.
-
-No API authentication layer.
-
-No automated abuse-reporting workflow.
-
-The project contains a development SQLite database.
-
-The requirements file contains several packages that may be unnecessary for the core application.
-
-Production dependency versions should be reviewed and tested as a controlled set.
-
-The current redirect implementation should enforce HTTP/HTTPS destination schemes.
-
-Reverse-proxy configuration should be reviewed before trusting forwarded IP headers.
-
-Automated tests are currently minimal.
-
-🚀 Recommended Advanced Roadmap
-
-Phase 1 — Production Hardening
-
-Environment-based secrets
-
-Strict ALLOWED_HOSTS
-
-DEBUG=False
-
-HTTPS
-
-Secure cookies
-
-HSTS
-
-PostgreSQL
-
-Automated backups
-
-Structured logging
-
-Phase 2 — Security
-
-Rate limiting
-
-CAPTCHA
-
-URL reputation scanning
-
-Domain blocklist
-
-Abuse reporting
-
-Admin audit log
-
-Stronger authorization tests
-
-Phase 3 — Analytics
-
-Daily click charts
-
-Unique visitors
-
-Referrers
-
-Browser/device reports
-
-Geographic analytics where appropriate
-
-Export CSV
-
-Date filtering
-
-Phase 4 — Product Features
-
-Custom aliases
-
-Expiration dates
-
-Password-protected links
-
-One-time links
-
-Click limits
-
-QR codes
-
-Tags
-
-Notes
-
-Bulk URL creation
-
-Phase 5 — Enterprise Scaling
-
-Redis
-
-Celery/background workers
-
-PostgreSQL optimization
-
-Read replicas where justified
-
-Object storage for exports
-
-Centralized logging
-
-Monitoring
-
-Alerting
-
-Containerized deployment
-
-CI/CD
-
-🧹 Backup and Maintenance
-
-SQLite backup
-
-For development:
-
-cp db.sqlite3 db.sqlite3.backup
-
-For production PostgreSQL:
-
-pg_dump "$DATABASE_URL" > backup.sql
-
-Restore:
-
-psql "$DATABASE_URL" < backup.sql
-
-Always test backups by performing periodic restore exercises.
-
-🔄 Update Workflow
-
-Before updating dependencies:
-
-git pull
-python -m pip install -r requirements.txt
-python manage.py check
-python manage.py migrate
-python manage.py collectstatic --noinput
-python manage.py test
-
-For production, test dependency upgrades in staging before deployment.
-
-📝 Development Best Practices
-
-Recommended Git workflow:
-
-git checkout -b feature/custom-alias
-
-Make changes, test:
-
-python manage.py check
-python manage.py test
-
-Commit:
-
-git add .
-git commit -m "Add custom URL aliases"
-
-Push:
-
-git push origin feature/custom-alias
-
-📜 License
-
-The repository currently identifies itself as MIT licensed in its project README/badge. Confirm that the repository contains the intended license text before redistributing the software.
-
-👨‍💻 Author
-
-Vishnu V M
-
-GitHub:
-
-https://github.com/vishnuvm1122/url-shortner
-
-LinkedIn:
-
-https://www.linkedin.com/in/vishnuvm1997/
-
-⭐ Project Summary
-
-This project provides a solid Django foundation for a URL-shortening service.
-
-Core capabilities
-
-                    URL SHORTENER
-                          │
-        ┌─────────────────┼─────────────────┐
-        │                 │                 │
-        ▼                 ▼                 ▼
-   Authentication    URL Management    Analytics
-        │                 │                 │
-        ├─ Register       ├─ Create       ├─ Click count
-        ├─ Login          ├─ Edit         ├─ IP address
-        ├─ Logout         ├─ Delete       ├─ Browser
-        ├─ Profile        └─ Redirect     ├─ Platform
-        └─ Password                       └─ Device
-        │
-        ▼
-     Admin Panel
-        │
-        ├─ URLs
-        ├─ Clicks
-        ├─ Search
-        ├─ Filters
-        └─ Management
-
-The current implementation is well suited for learning, internal deployments, prototypes, and as a foundation for a more advanced SaaS-grade URL-shortening platform. For public production use, prioritize security hardening, abuse prevention, rate limiting, privacy controls, PostgreSQL, monitoring, and scalable analytics.
+**Last Updated:** 2026 | Made with ❤️ by Vishnu VM
