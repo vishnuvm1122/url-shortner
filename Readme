@@ -1,18 +1,24 @@
-# 🚀 URL Shortener - Django Project
+# 🚀 URL Shortener — Django Project
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue)
-![Django](https://img.shields.io/badge/Django-3.x/4.x-green)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
-![License](https://img.shields.io/badge/License-MIT-orange)
-
-**GitHub Repo:** [https://github.com/vishnuvm1122/url-shortner](https://github.com/vishnuvm1122/url-shortner)
-## 📬 Connect with me
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![Django](https://img.shields.io/badge/Django-3.x%2F4.x-green)](https://www.djangoproject.com/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)](https://getbootstrap.com/)
+[![License](https://img.shields.io/badge/License-MIT-orange)]
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Vishnu-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vishnuvm1997/)
+
 ---
 
-## 📄 Project Description
+## Demo
+
+![screen-demo](https://github.com/vishnuvm1122/url-shortner/raw/main/screen-demo.gif)
+
+---
+
+## Project Description
+
 A Django-based **URL Shortener** application that allows users to:
+
 - ✨ Create **short URLs** for long URLs
 - 📊 Track the number of clicks per URL
 - 🖥 Manage URLs in a **user dashboard**
@@ -21,7 +27,8 @@ A Django-based **URL Shortener** application that allows users to:
 
 ---
 
-## 👤 User Authentication & Profile Features
+## User Authentication & Profile Features
+
 - 📝 **User Registration** with username, email, and password
 - 🔐 **Login** and Logout functionality
 - 🛠 **Profile Update** (username, email, first name, last name)
@@ -31,7 +38,8 @@ A Django-based **URL Shortener** application that allows users to:
 
 ---
 
-## 🔗 URL Shortening Features
+## URL Shortening Features
+
 - 🔹 Create **short URLs** with unique 6-character or 10-character UIDs
 - ✏️ **Edit** or **delete** your own URLs
 - 📈 Auto-increment click count per URL
@@ -40,7 +48,8 @@ A Django-based **URL Shortener** application that allows users to:
 
 ---
 
-## 📊 Click Tracking Features
+## Click Tracking Features
+
 - 🌐 Records **IP address, browser, platform, and device** for each click
 - 📋 Click details displayed per URL for logged-in users
 - ❌ Ability to **delete individual click records**
@@ -48,7 +57,8 @@ A Django-based **URL Shortener** application that allows users to:
 
 ---
 
-## 🛠 Admin Panel Features
+## Admin Panel Features
+
 - Full management of `Url` and `UrlClick` models
 - 🔎 **Search** and **filter** URLs and clicks
 - 📊 Click counts and URL preview directly in admin
@@ -56,19 +66,20 @@ A Django-based **URL Shortener** application that allows users to:
 
 ---
 
-## ⚡ Technologies Used
+## Technologies Used
+
 | Technology | Purpose |
 |------------|---------|
 | Python 3.8+ | Backend logic |
 | Django 3.x/4.x | Web framework |
-| SQLite/PostgreSQL | Database |
+| SQLite / PostgreSQL | Database |
 | Bootstrap 5 | Front-end styling |
-| HTML/CSS/JS | Web UI |
-| user-agents | Detect browser/device info |
+| HTML / CSS / JS | Web UI |
+| user-agents | Detect browser / device info |
 
 ---
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ```bash
 # Clone the repository
@@ -97,3 +108,8 @@ python manage.py createsuperuser
 
 # Run development server
 python manage.py runserver
+```
+
+---
+
+If you want the demo GIF moved into the `files/` folder (files/screen-demo.gif) instead of being referenced from the repository root, tell me and I will copy it into that path.
