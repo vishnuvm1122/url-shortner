@@ -21,7 +21,7 @@
 
 > **Watch the magic happen!** Convert any long URL into a compact, shareable short link in seconds.
 
-![screen-demo](./files/screen-demo.gif)
+![screen-demo](screen-demo.gif)
 
 *GIF showing the full URL shortening workflow with dashboard analytics*
 
